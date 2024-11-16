@@ -1,4 +1,169 @@
 {
+  "hlsyn_merlin_train": {
+    "file_name": "hlsyn_merlin_train.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "hlsyn_merlin_test": {
+    "file_name": "hlsyn_merlin_test.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "hlsyn_pair_test": {
+    "file_name": "hlsyn_pair_test.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "hlsyn_pair_train": {
+    "file_name": "hlsyn_pair_train.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_knn": {
+    "file_name": "knn_embed.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_spam-filter": {
+    "file_name": "spam-filter_embed.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_3d-rendering": {
+    "file_name": "3d-rendering_embed.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_2mm": {
+    "file_name": "2mm_embed.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_2mm_kern": {
+    "file_name": "2mm_embed_kern.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_covariance": {
+    "file_name": "covariance_embed.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_covariance_kern": {
+    "file_name": "covariance_embed_kern.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_fdtd-2d": {
+    "file_name": "fdtd-2d_embed.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_fdtd-2d_kern": {
+    "file_name": "fdtd-2d_embed_kern.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_fdtd-2d-large": {
+    "file_name": "fdtd-2d-large_embed.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_fdtd-2d-large_kern": {
+    "file_name": "fdtd-2d-large_embed_kern.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_mvt": {
+    "file_name": "mvt_embed.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_mvt_kern": {
+    "file_name": "mvt_embed_kern.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_mvt-medium": {
+    "file_name": "mvt-medium_embed.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_mvt-medium_kern": {
+    "file_name": "mvt-medium_embed_kern.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_syr2k": {
+    "file_name": "syr2k_embed.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_syr2k_kern": {
+    "file_name": "syr2k_embed_kern.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_trmm": {
+    "file_name": "trmm_embed.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_trmm_kern": {
+    "file_name": "trmm_embed_kern.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_trmm-opt": {
+    "file_name": "trmm-opt_embed.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_trmm-opt_kern": {
+    "file_name": "trmm-opt_embed_kern.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "openai_pair": {
+    "file_name": "openai_pair.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "hlsyn_sft_train": {
+    "file_name": "hlsyn_sft_train.json"
+  },
+  "hlsyn_sft_test": {
+    "file_name": "hlsyn_sft_test.json"
+  },
+  "openai_sft": {
+    "file_name": "openai_sft.json"
+  },
   "identity": {
     "file_name": "identity.json"
   },

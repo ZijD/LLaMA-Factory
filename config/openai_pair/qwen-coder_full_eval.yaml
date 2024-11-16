@@ -1,0 +1,43 @@
+### model
+model_name_or_path: /scratch/zijd/models/lora/hlsyn/qwen-coder-0.5B
+# model_name_or_path: /scratch/zijd/logs/qwen2.5-coder-0.5B/openai/checkpoint-150
+# model_name_or_path: Qwen/Qwen2.5-Coder-0.5B
+# resume_from_checkpoint: /scratch/zijd/logs/qwen2.5-coder-0.5B/lora/sft/openai/checkpoint-75
+
+### method
+stage: sft
+# do_train: true
+do_predict: false
+dataset: hlsyn_sft_train
+finetuning_type: lora
+template: qwen
+lora_target: all
+lora_rank: 8
+
+### dataset
+overwrite_cache: true
+preprocessing_num_workers: 16
+cutoff_len: 8192
+
+### output
+output_dir: /scratch/zijd/eval/lora/openai/qwen-coder-0.5B_post_sft
+logging_steps: 10
+save_steps: 50
+plot_loss: false
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 1
+learning_rate: 1.0e-4
+max_steps: 1
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000
+
+### eval
+eval_dataset: hlsyn_sft_test
+per_device_eval_batch_size: 1
+eval_strategy: steps
+eval_steps: 1

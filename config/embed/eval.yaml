@@ -1,0 +1,30 @@
+### model
+# model_name_or_path: /scratch/zijd/logs/qwen2.5-coder-0.5B/openai/checkpoint-150
+# model_name_or_path: Qwen/Qwen2.5-Coder-0.5B
+model_name_or_path: Qwen/Qwen2.5-Coder-3B
+# model_name_or_path: /scratch/zijd/models/lora/hlsyn/qwen-coder-0.5B
+finetuning_type: lora
+template: qwen
+
+
+### method
+stage: pt
+do_predict: false
+packing: false # brady: !!! important
+
+### dataset
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: /scratch/zijd/embeds/ori/qwen-coder-3B/knn
+logging_steps: 1
+save_steps: 1
+overwrite_output_dir: true
+
+### eval
+batch_eval_metrics: true
+eval_dataset: embed_knn
+per_device_eval_batch_size: 4
+eval_strategy: steps
+eval_steps: 1

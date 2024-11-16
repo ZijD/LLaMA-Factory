@@ -19,6 +19,7 @@ import sys
 from enum import Enum, unique
 
 from . import launcher
+from . import launch_embed
 from .api.app import run_api
 from .chat.chat_model import run_chat
 from .eval.evaluator import run_eval
@@ -26,6 +27,7 @@ from .extras import logging
 from .extras.env import VERSION, print_env
 from .extras.misc import get_device_count
 from .train.tuner import export_model, run_exp
+from .embed.embedder import get_embed
 from .webui.interface import run_web_demo, run_web_ui
 
 
@@ -70,6 +72,7 @@ class Command(str, Enum):
     WEBDEMO = "webchat"
     WEBUI = "webui"
     VER = "version"
+    EMBED = "embed"
     HELP = "help"
 
 
@@ -109,6 +112,30 @@ def main():
             sys.exit(process.returncode)
         else:
             run_exp()
+    elif command == Command.EMBED:
+        force_torchrun = os.getenv("FORCE_TORCHRUN", "0").lower() in ["true", "1"]
+        if force_torchrun or get_device_count() > 1:
+            master_addr = os.getenv("MASTER_ADDR", "127.0.0.1")
+            master_port = os.getenv("MASTER_PORT", str(random.randint(20001, 29999)))
+            logger.info_rank0(f"Initializing distributed tasks at: {master_addr}:{master_port}")
+            process = subprocess.run(
+                (
+                    "torchrun --nnodes {nnodes} --node_rank {node_rank} --nproc_per_node {nproc_per_node} "
+                    "--master_addr {master_addr} --master_port {master_port} {file_name} {args}"
+                ).format(
+                    nnodes=os.getenv("NNODES", "1"),
+                    node_rank=os.getenv("NODE_RANK", "0"),
+                    nproc_per_node=os.getenv("NPROC_PER_NODE", str(get_device_count())),
+                    master_addr=master_addr,
+                    master_port=master_port,
+                    file_name=launch_embed.__file__,
+                    args=" ".join(sys.argv[1:]),
+                ),
+                shell=True,
+            )
+            sys.exit(process.returncode)
+        else:
+            get_embed()
     elif command == Command.WEBDEMO:
         run_web_demo()
     elif command == Command.WEBUI:

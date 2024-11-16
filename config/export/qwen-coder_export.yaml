@@ -1,0 +1,12 @@
+model_name_or_path: Qwen/Qwen2.5-Coder-0.5B
+adapter_name_or_path: /scratch/zijd/logs/qwen2.5-coder-0.5B/lora/hlsyn_pair/checkpoint-150
+finetuning_type: lora
+template: qwen
+lora_target: all
+lora_rank: 8
+
+### export
+export_dir: /scratch/zijd/models/lora/hlsyn/qwen-coder-0.5B
+export_size: 2
+export_device: cpu
+export_legacy_format: false
