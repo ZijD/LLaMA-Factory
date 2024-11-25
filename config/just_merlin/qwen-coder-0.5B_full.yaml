@@ -4,21 +4,21 @@ model_name_or_path: Qwen/Qwen2.5-Coder-0.5B
 ### method
 stage: pt
 do_train: true
-finetuning_type: lora
-lora_target: all
-lora_rank: 8
+finetuning_type: full
+# lora_target: all
+# lora_rank: 8
 
 ### dataset
 dataset: hlsyn_merlin_train
 template: qwen
-cutoff_len: 4096
+cutoff_len: 2048
 overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: /scratch/zijd/logs/qwen2.5-coder-0.5B/lora/pure_merlin
-logging_steps: 10
-save_steps: 50
+output_dir: /scratch/zijd/logs/qwen2.5-coder-0.5B/pure_merlin/hlsyn
+logging_steps: 3
+save_steps: 6
 plot_loss: true
 overwrite_output_dir: true
 report_to: tensorboard
@@ -27,7 +27,7 @@ report_to: tensorboard
 per_device_train_batch_size: 4
 gradient_accumulation_steps: 8
 learning_rate: 1.0e-4
-num_train_epochs: 3.0
+num_train_epochs: 2.0
 lr_scheduler_type: cosine
 warmup_ratio: 0.1
 bf16: true
@@ -37,4 +37,4 @@ ddp_timeout: 180000000
 eval_dataset: hlsyn_merlin_test
 per_device_eval_batch_size: 4
 eval_strategy: steps
-eval_steps: 50
+eval_steps: 6

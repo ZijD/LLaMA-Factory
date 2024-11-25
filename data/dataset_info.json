@@ -1,4 +1,13 @@
 {
+  "nlp_perf_sft": {
+    "file_name": "nlp_perf_sft.json"
+  },
+  "nlp_sft": {
+    "file_name": "nlp_sft.json"
+  },
+  "openai_nlp_sft": {
+    "file_name": "openai_nlp_sft.json"
+  },
   "hlsyn_merlin_train": {
     "file_name": "hlsyn_merlin_train.json",
     "columns": {
@@ -19,6 +28,18 @@
   },
   "hlsyn_pair_train": {
     "file_name": "hlsyn_pair_train.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "openai_merlin": {
+    "file_name": "openai_merlin.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "embed_pack2_train": {
+    "file_name": "pack2_train_embed.json",
     "columns": {
       "prompt": "text"
     }

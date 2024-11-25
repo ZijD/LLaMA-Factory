@@ -1,5 +1,5 @@
 ### model
-model_name_or_path: /scratch/zijd/logs/qwen2.5-coder-0.5B/openai/checkpoint-150
+model_name_or_path: Qwen/Qwen2.5-Coder-0.5B
 
 ### method
 stage: sft
@@ -11,7 +11,7 @@ deepspeed: examples/deepspeed/ds_z3_config.json
 
 ### dataset
 dataset: openai_sft
-cutoff_len: 8192
+cutoff_len: 10000
 overwrite_cache: true
 preprocessing_num_workers: 16
 template: qwen
